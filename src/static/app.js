@@ -25,12 +25,23 @@ document.addEventListener("DOMContentLoaded", () => {
           <p>${details.description}</p>
           <p><strong>Schedule:</strong> ${details.schedule}</p>
           <p><strong>Availability:</strong> ${spotsLeft} spots left</p>
-          <p><strong>Participants:</strong> ${
-            details.participants.length > 0
-              ? details.participants.join(", ")
-              : "No participants yet"
-          }</p>
+          <div class="participants-list">
+            <p><strong>Participants:</strong> ${
+              details.participants.length > 0
+                ? details.participants.join(", ")
+                : "No participants yet"
+            }</p>
+          </div>
+          <span class="participants-toggle">Show Participants</span>
         `;
+
+        const participantsList = activityCard.querySelector(".participants-list");
+        const toggleButton = activityCard.querySelector(".participants-toggle");
+
+        toggleButton.addEventListener("click", () => {
+          const isVisible = participantsList.classList.toggle("visible");
+          toggleButton.textContent = isVisible ? "Hide Participants" : "Show Participants";
+        });
 
         activitiesList.appendChild(activityCard);
 
