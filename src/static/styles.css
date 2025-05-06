@@ -136,6 +136,27 @@ button:hover {
   display: none;
 }
 
+.participants-list {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  display: none; /* Inicialmente oculto */
+}
+
+.participants-list.visible {
+  display: block; /* Exibido quando expandido */
+}
+
+.participants-toggle {
+  margin-top: 10px;
+  color: #0066cc;
+  cursor: pointer;
+  text-decoration: underline;
+  font-size: 14px;
+}
+
 footer {
   text-align: center;
   margin-top: 30px;
